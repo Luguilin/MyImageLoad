@@ -1,19 +1,12 @@
 package com.lgl.myimageload;
 
-import android.support.v4.app.Fragment;
+import android.app.Activity;
+import android.os.Bundle;
 
-public class MainActivity extends AbsSingleFragmentActivity
-{
-	@Override
-	protected Fragment createFragment()
-	{
-		return new ListImgsFragment();
-	}
+public class MainActivity extends Activity {
 
-	@Override
-	protected int getLayoutId()
-	{
-		return R.layout.activity_single_fragment;
-	}
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);//我是开发者的改变
+    }
 }
