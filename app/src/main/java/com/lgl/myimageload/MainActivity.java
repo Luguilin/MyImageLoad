@@ -11,4 +11,9 @@ public class MainActivity extends Activity {
         ///我是  master
         //我是开发者添加的代码
     }
+
+    //我是开发者分支在修改的东西
+    public void saaa(){
+
+    }
 }
