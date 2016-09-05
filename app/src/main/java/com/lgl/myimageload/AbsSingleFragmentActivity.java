@@ -18,7 +18,6 @@ public abstract class AbsSingleFragmentActivity extends FragmentActivity {
 			fragment = createFragment();
 			fm.beginTransaction().add(R.id.id_fragmentContainer, fragment).commit();
 		}
-
 	}
 
 	protected abstract Fragment createFragment();
