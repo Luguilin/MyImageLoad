@@ -28,10 +28,8 @@ public class ImageSizeUtil {
         if (width > reqWidth || height > reqHeight) {
             int widthRadio = Math.round(width * 1.0f / reqWidth);
             int heightRadio = Math.round(height * 1.0f / reqHeight);
-
             inSampleSize = Math.max(widthRadio, heightRadio);
         }
-
         return inSampleSize;
     }
 
@@ -44,8 +42,7 @@ public class ImageSizeUtil {
     public static ImageSize getImageViewSize(ImageView imageView) {
 
         ImageSize imageSize = new ImageSize();
-        DisplayMetrics displayMetrics = imageView.getContext().getResources()
-                .getDisplayMetrics();
+        DisplayMetrics displayMetrics = imageView.getContext().getResources().getDisplayMetrics();
 
 
         LayoutParams lp = imageView.getLayoutParams();
