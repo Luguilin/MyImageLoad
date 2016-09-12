@@ -24,8 +24,8 @@ import java.util.concurrent.Semaphore;
  *
  * @author zhy
  */
-public class ImageLoader {
-    private static ImageLoader mInstance;
+public class ImageHelper {
+    private static ImageHelper mInstance;
 
     /**
      * 图片缓存的核心对象
@@ -59,13 +59,13 @@ public class ImageLoader {
 
     private boolean isDiskCacheEnable = true;
 
-    private static final String TAG = "ImageLoader";
+    private static final String TAG = "ImageHelper";
 
     public enum Type {
         FIFO, LIFO;
     }
 
-    private ImageLoader(int threadCount, Type type) {
+    private ImageHelper(int threadCount, Type type) {
         init(threadCount, type);
     }
 
@@ -123,26 +123,25 @@ public class ImageLoader {
 
             ;
         };
-
         mPoolThread.start();
     }
 
-    public static ImageLoader getInstance() {
+    public static ImageHelper getInstance() {
         if (mInstance == null) {
-            synchronized (ImageLoader.class) {
+            synchronized (ImageHelper.class) {
                 if (mInstance == null) {
-                    mInstance = new ImageLoader(DEAFULT_THREAD_COUNT, Type.LIFO);
+                    mInstance = new ImageHelper(DEAFULT_THREAD_COUNT, Type.LIFO);
                 }
             }
         }
         return mInstance;
     }
 
-    public static ImageLoader getInstance(int threadCount, Type type) {
+    public static ImageHelper getInstance(int threadCount, Type type) {
         if (mInstance == null) {
-            synchronized (ImageLoader.class) {
+            synchronized (ImageHelper.class) {
                 if (mInstance == null) {
-                    mInstance = new ImageLoader(threadCount, type);
+                    mInstance = new ImageHelper(threadCount, type);
                 }
             }
         }

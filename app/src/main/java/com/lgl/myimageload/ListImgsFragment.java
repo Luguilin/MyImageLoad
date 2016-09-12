@@ -11,12 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.lgl.myimageload.utils.ImageLoader;
+import com.lgl.myimageload.utils.ImageHelper;
 import com.lgl.myimageload.utils.Images;
 
 
 /**
- * http://blog.csdn.net/lmj623565791/article/details/41874561
+ * activity_single_fragment.xml
  * 
  * @author zhy
  *
@@ -24,12 +24,12 @@ import com.lgl.myimageload.utils.Images;
 public class ListImgsFragment extends Fragment {
 	private GridView mGridView;
 	private String[] mUrlStrs = Images.imageThumbUrls;
-	private ImageLoader mImageLoader;
+	private ImageHelper mImageLoader;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mImageLoader = ImageLoader.getInstance(3, ImageLoader.Type.LIFO);
+		mImageLoader = ImageHelper.getInstance(3, ImageHelper.Type.LIFO);
 	}
 
 	@Override

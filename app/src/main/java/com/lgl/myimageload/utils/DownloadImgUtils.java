@@ -59,7 +59,6 @@ public class DownloadImgUtils {
             } catch (IOException e) {
             }
         }
-
         return false;
 
     }
@@ -102,7 +101,6 @@ public class DownloadImgUtils {
                     is.close();
             } catch (IOException e) {
             }
-
             try {
                 if (fos != null)
                     fos.close();
